@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/pages/cadastro.dart';
+import 'package:sugarhealth/pages/home.dart';
 import 'package:sugarhealth/pages/login.dart';
 
 void main() {
@@ -20,11 +21,13 @@ class MyApp extends StatelessWidget {
           colorScheme: .fromSeed(seedColor: Colors.green),
         ),
 
-        initialRoute: '/cadastro',
+        initialRoute: '/home',
 
         routes: {
           '/login': (context) => Login(),
           '/cadastro': (context) => Cadastro(),
+          '/home': (context) => Home(),
+
         }
     );
   }
