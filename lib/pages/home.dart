@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
                                   height: 42,
                                   child: TextField(
                                     keyboardType: TextInputType.number,
-                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora(),
+                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora('', 0xffA8D3F6)
                                   ),
                                 ),
                               ),
@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
                                   height: 42,
                                   child: TextField(
                                     keyboardType: TextInputType.number,
-                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora(),
+                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora('', 0xffA8D3F6),
                                   ),
                                 ),
                               ),
@@ -125,7 +125,7 @@ class _HomeState extends State<Home> {
                                   height: 42,
                                   child: TextField(
                                     keyboardType: TextInputType.number,
-                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora(),
+                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora('', 0xffA8D3F6),
                                   ),
                                 ),
                               ),

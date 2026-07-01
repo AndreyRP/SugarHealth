@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sugarhealth/pages/avaliacaoMedidas.dart';
 import 'package:sugarhealth/pages/cadastro.dart';
 import 'package:sugarhealth/pages/home.dart';
 import 'package:sugarhealth/pages/login.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           '/login': (context) => Login(),
           '/cadastro': (context) => Cadastro(),
           '/home': (context) => Home(),
-
+          '/avaliacaoMedidas': (context) => Avaliacao(),
         }
     );
   }

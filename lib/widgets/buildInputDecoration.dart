@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 class InputStylesCalculadora {
 
-  static InputDecoration BuildInputDecorationCalculadora() {
+  static InputDecoration BuildInputDecorationCalculadora(String hint, int cor) {
     return InputDecoration(
       filled: true,
-      fillColor: Color(0xffA8D3F6),
-      hintText: '',
+      fillColor: Color(cor),
+      hintText: hint,
+      hintStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.black
+      ),
 
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
       border: OutlineInputBorder(
