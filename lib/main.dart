@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           colorScheme: .fromSeed(seedColor: Colors.green),
         ),
 
-        initialRoute: '/home',
+        initialRoute: '/cadastro',
 
         routes: {
           '/login': (context) => Login(),
