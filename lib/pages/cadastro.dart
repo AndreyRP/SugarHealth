@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/widgets/buildLabel.dart';
 import 'package:sugarhealth/widgets/createBoxInput.dart';
-
 import '../widgets/inputDecoration.dart';
 
+String? nomeSalvo;
+String? tipoDiabetesSalvo;
+String? emailSalvo;
+String? telefoneSalvo;
+String? dataNascimentoSalva;
+String? senhaSalva;
 
 class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
@@ -17,7 +22,14 @@ class _CadastroState extends State<Cadastro> {
   bool _obscureTextCon = true;
   String? _tipoDiabetesSelecionado;
   final List<String> _tiposDiabetes = ['Tipo 1', 'Tipo 2', 'Pré-diabetes'];
+
+  final TextEditingController _nomeController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _telefoneController = TextEditingController();
   final TextEditingController _dataNascimentoController = TextEditingController();
+  final TextEditingController _senhaController = TextEditingController();
+  final TextEditingController _confirmaSenhaController = TextEditingController();
+
   DateTime? _dataSelecionada;
 
   Future<void> _selecionarData(BuildContext context) async {
@@ -39,6 +51,42 @@ class _CadastroState extends State<Cadastro> {
         _dataNascimentoController.text = "$dia/$mes/$ano";
       });
     }
+  }
+
+  void _realizarCadastro() {
+    if (_nomeController.text.isEmpty ||
+        _tipoDiabetesSelecionado == null ||
+        _emailController.text.isEmpty ||
+        _telefoneController.text.isEmpty ||
+        _dataNascimentoController.text.isEmpty ||
+        _senhaController.text.isEmpty ||
+        _confirmaSenhaController.text.isEmpty) {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Por favor, preencha todos os campos!')),
+      );
+      return;
+    }
+
+    if (_senhaController.text != _confirmaSenhaController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('As senhas digitadas não coincidem!')),
+      );
+      return;
+    }
+
+    nomeSalvo = _nomeController.text;
+    tipoDiabetesSalvo = _tipoDiabetesSelecionado;
+    emailSalvo = _emailController.text;
+    telefoneSalvo = _telefoneController.text;
+    dataNascimentoSalva = _dataNascimentoController.text;
+    senhaSalva = _senhaController.text;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Conta criada com sucesso!')),
+    );
+
+    Navigator.pushReplacementNamed(context, '/login');
   }
 
   @override
@@ -70,20 +118,16 @@ class _CadastroState extends State<Cadastro> {
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(
                   children: [
-
-                    // --- CAMPO: NOME DO USUÁRIO ---
                     BuildInputLabel('Nome do Usuário'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _nomeController,
                         decoration: InputStyles.BuildInputDecoration('Digite o nome'),
                       ),
                     ),
                     const SizedBox(height: 16),
 
-
-
-                    // --- CAMPO: TIPO DE DIABETES ---
                     BuildInputLabel('Tipo de diabetes'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
@@ -120,29 +164,28 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     const SizedBox(height: 16),
 
-                    // --- CAMPO: E-MAIL ---
                     BuildInputLabel('E-mail'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputStyles.BuildInputDecoration('E-mail do usuário'),
                       ),
                     ),
                     const SizedBox(height: 16),
 
-                    // --- CAMPO: TELEFONE ---
                     BuildInputLabel('Digite seu telefone'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _telefoneController,
                         keyboardType: TextInputType.phone,
                         decoration: InputStyles.BuildInputDecoration('Digite seu telefone'),
                       ),
                     ),
                     const SizedBox(height: 16),
 
-                    // --- CAMPO: DATA DE NASCIMENTO ---
                     BuildInputLabel('Data de Nascimento'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
@@ -157,12 +200,11 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     const SizedBox(height: 16),
 
-
-                    // --- CAMPO: CRIAR SENHA ---
                     BuildInputLabel('Criar Senha'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _senhaController,
                         obscureText: _obscureText,
                         decoration: InputStyles.BuildInputDecoration('Crie sua senha').copyWith(
                           suffixIcon: IconButton(
@@ -177,11 +219,11 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     const SizedBox(height: 16),
 
-                    // --- CAMPO: CONFIRME SUA SENHA ---
                     BuildInputLabel('Confirme sua Senha'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _confirmaSenhaController,
                         obscureText: _obscureTextCon,
                         decoration: InputStyles.BuildInputDecoration('Confirme sua senha').copyWith(
                           suffixIcon: IconButton(
@@ -200,7 +242,6 @@ class _CadastroState extends State<Cadastro> {
 
               const SizedBox(height: 40),
 
-              // Botão de Criar Conta
               Center(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -211,9 +252,7 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     minimumSize: const Size(220, 42),
                   ),
-                  onPressed: () {
-                    print('Botão Clicado!');
-                  },
+                  onPressed: _realizarCadastro,
                   child: const Text(
                     'Criar Conta',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
@@ -223,7 +262,6 @@ class _CadastroState extends State<Cadastro> {
 
               const SizedBox(height: 20),
 
-              // Botão de Informação/Ajuda no final da página
               Padding(
                 padding: const EdgeInsets.only(right: 16.0, bottom: 16.0),
                 child: Row(
@@ -234,7 +272,9 @@ class _CadastroState extends State<Cadastro> {
                       color: Colors.black,
                       iconSize: 30,
                       onPressed: () {
-                        print("Usuário pediu informação");
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Preencha os dados para criar seu perfil no Sugar Health.')),
+                        );
                       },
                     )
                   ],

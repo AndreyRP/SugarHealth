@@ -3,6 +3,7 @@ import 'package:sugarhealth/widgets/buildLabel.dart';
 import 'package:sugarhealth/widgets/createBoxInput.dart';
 
 import '../widgets/inputDecoration.dart';
+import 'cadastro.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -14,6 +15,33 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   bool _obscureText = true;
 
+  final TextEditingController _usuarioController = TextEditingController();
+  final TextEditingController _senhaController = TextEditingController();
+
+  void _validarLogin() {
+    String usuarioDigitado = _usuarioController.text;
+    String senhaDigitada = _senhaController.text;
+
+    if (nomeSalvo == null || senhaSalva == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Nenhum usuário cadastrado. Faça o cadastro primeiro.')),
+      );
+      return;
+    }
+
+    if (usuarioDigitado == nomeSalvo && senhaDigitada == senhaSalva) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Login validado com sucesso!')),
+      );
+
+      Navigator.pushReplacementNamed(context, '/home');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Usuário ou senha incorretos!')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +51,6 @@ class _LoginState extends State<Login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-
-              // Área da Logo Centralizada
               Center(
                 child: Container(
                   margin: const EdgeInsets.symmetric(vertical: 70),
@@ -43,25 +69,23 @@ class _LoginState extends State<Login> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
-                    // --- CAMPO: USUÁRIO ---
                     BuildInputLabel('Usuário'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _usuarioController,
                         decoration: InputStyles.BuildInputDecoration('Nome do usuário'),
                       ),
                     ),
 
                     const SizedBox(height: 24),
 
-                    // --- CAMPO: SENHA ---
                     BuildInputLabel('Senha'),
                     const SizedBox(height: 6),
                     BuildInputContainer(
                       child: TextField(
+                        controller: _senhaController,
                         obscureText: _obscureText,
-                        // ✅ Usa o estilo reaproveitável do outro arquivo + o .copyWith() para o botão do olho
                         decoration: InputStyles.BuildInputDecoration('Digite sua senha').copyWith(
                           suffixIcon: IconButton(
                             icon: Icon(
@@ -83,12 +107,9 @@ class _LoginState extends State<Login> {
 
               const SizedBox(height: 60),
 
-              // Area dos botoes
               Center(
                 child: Column(
                   children: [
-
-                    // Botão de Login
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff97F8ED),
@@ -99,9 +120,7 @@ class _LoginState extends State<Login> {
                         ),
                         minimumSize: const Size(220, 42),
                       ),
-                      onPressed: () {
-                        print('Botão Clicado!');
-                      },
+                      onPressed: _validarLogin,
                       child: const Text(
                         'Login',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -110,7 +129,6 @@ class _LoginState extends State<Login> {
 
                     const SizedBox(height: 20),
 
-                    // Link: Esqueci a senha
                     TextButton(
                       onPressed: () {},
                       child: const Text(
@@ -123,9 +141,10 @@ class _LoginState extends State<Login> {
                       ),
                     ),
 
-                    // Link: Cadastrar-se
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/cadastro');
+                      },
                       child: const Text(
                         'Cadastrar - se',
                         style: TextStyle(
