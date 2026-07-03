@@ -9,7 +9,7 @@
 ---
 
 ##  Descrição Resumida do Sistema
-O Sugar Health é um aplicativo móvel desenvolvido para o gerenciamento integrado da saúde e bem-estar, focado especialmente em pessoas com diabetes que praticam ou têm interesse em treinos físicos e necessitam de um controle rigoroso da alimentação. 
+O Sugar Health é um aplicativo móvel desenvolvido para o gerenciamento integrado da saúde e bem-estar, focado especialmente em pessoas com diabetes que praticam ou têm interesse em treinos físicos e necessitam de um controle rigoroso da alimentação.
 
 O sistema centraliza o acompanhamento de múltiplos aspectos da saúde que costumam ficar dispersos (como anotações manuais ou uso de vários apps diferentes). Ele permite unificar o registro de hábitos alimentares, monitoramento de atividades físicas e oferece suporte para dúvidas frequentes, proporcionando uma visão holística do progresso do usuário e facilitando a adesão a uma rotina saudável e consciente.
 
@@ -25,47 +25,54 @@ O projeto utiliza ferramentas modernas e consolidadas no mercado para garantir u
 ---
 
 ## Instruções para Execução
-*(Nota: Preencha esta seção com os comandos exatos assim que a estrutura do código estiver pronta)*
+
+Nesta etapa atual de desenvolvimento, **não é necessário configurar banco de dados ou backend**. O sistema de autenticação e a calculadora estão utilizando armazenamento em memória para facilitar os testes e a validação do fluxo das telas.
 
 ### Pré-requisitos
-* Flutter SDK instalado na máquina.
-* Java JDK (versão utilizada no projeto) e Maven/Gradle.
-* Dispositivo móvel conectado ou emulador configurado.
+* [Flutter SDK](https://docs.flutter.dev/get-started/install) instalado e configurado na máquina.
+* Uma IDE de sua preferência (VS Code ou Android Studio).
+* Emulador Android/iOS configurado **OU** Google Chrome instalado para rodar a versão Web.
 
-### Passos para execução:
-1. **Clonar o repositório:**
+### Passo a passo para rodar a aplicação:
+
+1. **Clone o repositório para a sua máquina:**
    ```bash
-   git clone [https://link-do-seu-repositorio.com](https://link-do-seu-repositorio.com)
-   
-2. **Rodar o Backend (Spring Boot):**
-   * Navegue até a pasta do backend e execute a aplicação através da sua IDE de preferência ou via terminal:
-   mvn spring-boot:run  
+   git clone https://github.com/AndreyRP/SugarHealth.git
 
-3. **Rodar o Frontend (Flutter):**  
-   * Navegue até a pasta do aplicativo mobile, instale as dependências e inicie o app:
+2. **Acesse a pasta do projeto e instale as dependências:**
+   ```bahs
+   cd SugarHealth
    flutter pub get
-   flutter run
 
-##  Funcionalidades Implementadas
+3. **Execute o aplicativo:**
+
+   **Opção A:** Rodar no navegador (Recomendado para testes rápidos da interface):
+```bash
+   flutter run -d chrome
+   ```
+   Nota: Caso enfrente problemas de conexão com o navegador padrão, utilize o comando e acesse o link (localhost) gerado no terminal.
+```bash
+flutter run -d web-server
+```
+   **Opção B:** Rodar no Emulador ou Dispositivo Físico:
+   Certifique-se de que o emulador está aberto ou o celular está conectado com a depuração USB ativa, e rode:
+```bash   
+flutter run
+```
+
+## Funcionalidades Implementadas
 
 ### Módulos Principais:
-* **Autenticação:** Cadastro e login de usuários (incluindo administradores).
-* **Perfil Personalizado:** Configuração de informações pessoais para adequar a experiência às necessidades de cada usuário.
-* **Módulo de Nutrição:** Registro diário de refeições focado no controle alimentar.
-* **Módulo de Exercícios:** Registro e monitoramento de atividades físicas e treinos.
-* **Painel de Progresso:** Acompanhamento visual da evolução dos hábitos e resultados obtidos com o tempo.
-* **Módulo de P&A (Perguntas e Respostas):** Canal de suporte para tirar dúvidas sobre alimentação e rotinas de exercícios.
+* **Autenticação em Memória:** Telas de Cadastro e Login funcionais com validação de dados em tempo de execução (armazenamento em variáveis globais, sem integração com banco de dados nesta etapa).
+* **Calculadora de Glicemia para Treino (Home):** Ferramenta que avalia a glicose atual do usuário, idade, peso e altura, emitindo alertas visuais (Crítico, Excelente ou Seguro) para liberar ou restringir a prática de exercícios físicos com base no risco de hipoglicemia ou cetoacidose.
+* **Perfil Personalizado:** Configuração inicial de informações pessoais (incluindo tipo de diabetes e dados físicos) para adequar a experiência do usuário.
 
-###  Funcionalidades Futuras (Roadmap):
+### Funcionalidades Futuras (Roadmap):
+* Integração com Banco de Dados para persistência real de usuários (Backend em Spring Boot).
 * Integração com sensores de monitoramento contínuo de glicose (ex: *FreeStyle Libre*).
-* Módulo de planejamento e cadastro de dietas semanais e mensais (em vez de apenas registro).
+* Módulo de planejamento e cadastro de dietas semanais e mensais.
+* Módulo de P&A (Perguntas e Respostas) para suporte e dúvidas.
 * Expansão para monitoramento de outros indicadores de saúde (pressão arterial, frequência cardíaca, etc.).
 
 ---
-
-## 📺Vídeo de Demonstração
-
-*O link para o vídeo de demonstração da aplicação estará disponível assim que a etapa de validação e gravação for concluída.*
-
-* [Link do Vídeo no YouTube/Drive] (A adicionar)
 
