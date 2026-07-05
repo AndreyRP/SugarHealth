@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/pages/avaliacaoMedidas.dart';
 import 'package:sugarhealth/pages/cadastro.dart';
+import 'package:sugarhealth/pages/dieta.dart';
 import 'package:sugarhealth/pages/exercicio.dart';
 import 'package:sugarhealth/pages/home.dart';
 import 'package:sugarhealth/pages/login.dart';
+
+final GlobalKey<ScaffoldMessengerState> snackbarKey = GlobalKey<ScaffoldMessengerState>();
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        scaffoldMessengerKey: snackbarKey,
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -31,6 +35,7 @@ class MyApp extends StatelessWidget {
           '/home': (context) => Home(),
           '/avaliacaoMedidas': (context) => Avaliacao(),
           '/exercicios': (context) => TelaCategorias(),
+          '/dieta': (context) => Dieta(),
         }
     );
   }
