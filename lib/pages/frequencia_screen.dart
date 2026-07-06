@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../widgets/custom_app_bar.dart';
+import '../widgets/cabecalho.dart';
 import '../widgets/este_mes.dart';
 import '../widgets/este_ano.dart';
+import '../widgets/menuRetratio.dart';
 import '../widgets/outros_anos.dart';
 
 
@@ -27,7 +28,9 @@ class _FrequenciaScreenState extends State<FrequenciaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: Cabecalho(),
+      drawer: MenuRetratio(),
+      backgroundColor: Color(0xff1AB0A0),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -72,12 +75,16 @@ class _FrequenciaScreenState extends State<FrequenciaScreen> {
       child: GestureDetector(
         onTap: () => setState(() => abaSelecionada = titulo),
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 4),
           decoration: BoxDecoration(
             color: isSelected ? Colors.transparent : Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            border: isSelected ? Border.all(color: Colors.black, width: 1.5) : null,
+            border: isSelected
+                ? Border(bottom: BorderSide(color: Colors.black, width: 1.5))
+                : null,
+            boxShadow: null,
+
           ),
+
           child: Text(
             titulo,
             textAlign: TextAlign.center,

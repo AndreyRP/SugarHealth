@@ -3,6 +3,7 @@ import 'package:sugarhealth/pages/avaliacaoMedidas.dart';
 import 'package:sugarhealth/pages/cadastro.dart';
 import 'package:sugarhealth/pages/dieta.dart';
 import 'package:sugarhealth/pages/exercicio.dart';
+import 'package:sugarhealth/pages/frequencia_screen.dart';
 import 'package:sugarhealth/pages/home.dart';
 import 'package:sugarhealth/pages/login.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/avaliacaoMedidas': (context) => Avaliacao(),
           '/exercicios': (context) => TelaCategorias(),
           '/dieta': (context) => Dieta(),
+          '/frequencia': (context) => FrequenciaScreen(),
         }
     );
   }

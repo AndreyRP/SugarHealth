@@ -47,7 +47,7 @@ class MenuRetratio extends StatelessWidget {
           ListTile(
             leading:  Icon(Icons.calendar_month),
             title:  Text('Frequencia'),
-            onTap: () => _navegarPara(context, '/exercicios'),
+            onTap: () => _navegarPara(context, '/frequencia'),
           ),
           ListTile(
             leading:  Icon(Icons.messenger),

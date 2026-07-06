@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screens/frequencia_screen.dart';
+import '../pages/frequencia_screen.dart';
 
 class EsteAno extends StatelessWidget {
   final Map<String, DadosTreinoDia> historico;
