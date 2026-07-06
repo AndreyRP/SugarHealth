@@ -1,83 +1,112 @@
 import 'package:flutter/material.dart';
 
-Widget Cabecalho() {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset(
-          'assets/images/logo.png',
-          width: 45,
-          height: 45,
-        ),
+class Cabecalho extends StatefulWidget implements PreferredSizeWidget {
+  const Cabecalho({super.key});
 
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10.0, right: 8.0),
-            child: Row(
+  @override
+  State<Cabecalho> createState() => _CabecalhoState();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _CabecalhoState extends State<Cabecalho> {
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    return AppBar(
+      backgroundColor: Colors.transparent,
+
+      // --- lado esquerdo (logo) ---
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: GestureDetector(
+          onTap: (){
+            setState(() {
+              Scaffold.of(context).openDrawer();
+            });
+          },
+          child: Image.asset(
+            'assets/images/logo.png',
+            width: 45,
+            height: 45,
+          )
+        ),
+        ),
+      leadingWidth: 60,
+
+      // --- Titulos e troca rapida ---
+      title: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
-                Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'SUGAR HEALTH',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Text(
-                        'Treinos Físicos',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  'SUGAR HEALTH',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 ),
-
-                IconButton(
-                  icon: const Icon(Icons.autorenew),
-                  color: Colors.black,
-                  iconSize: 28,
-                  constraints: const BoxConstraints(),
-                  padding: const EdgeInsets.only(left: 8.0),
-                  onPressed: () {
-                    print("Trocou a unidade de medida!");
-                  },
+                Text(
+                  'Treinos Físicos',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
           ),
-        ),
+          IconButton(
+            icon: const Icon(Icons.autorenew),
+            color: Colors.black,
+            iconSize: 24,
+            onPressed: () {
+              Navigator.pushNamed(context, '/avaliacaoMedidas');
+            },
+          ),
+        ],
+      ),
 
+      // --- lado direito  (chat e conta)
+      actions: [
         IconButton(
           icon: const Icon(Icons.chat_bubble_outline),
           color: Colors.black,
-          iconSize: 28,
+          iconSize: 26,
           onPressed: () {
-            print("Abriu as mensagens!");
           },
         ),
 
-        Image.asset(
-          'assets/images/logo.png',
-          width: 45,
-          height: 45,
+        Padding(
+          padding: const EdgeInsets.only(right: 16.0, left: 8.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            child: Image.asset(
+              'assets/images/logo.png',
+              width: 45,
+              height: 45,
+            ),
+          ),
         ),
       ],
-    ),
-  );
+    );
+  }
+
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
 }

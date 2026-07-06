@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
 
-import '../main.dart';
 import 'createBoxInput.dart';
 import 'inputDecoration.dart';
 

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/widgets/buildBoxTexto.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 import 'package:sugarhealth/widgets/campoAvalia%C3%A7ao.dart';
 import 'package:sugarhealth/widgets/linhaAvaliacao.dart';
 import 'package:sugarhealth/widgets/textoAvaliacao.dart';
 
-import '../widgets/buildInputDecoration.dart';
+import '../widgets/menuRetratio.dart';
 
 class Avaliacao extends StatefulWidget {
   const Avaliacao({super.key});
@@ -18,16 +17,15 @@ class _AvaliacaoState extends State<Avaliacao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Cabecalho(),
+      drawer: MenuRetratio(),
       backgroundColor: const Color(0xffB4EAE1),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Cabecalho(),
-
               const SizedBox(height: 30),
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Column(

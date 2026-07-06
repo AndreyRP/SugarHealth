@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/widgets/CadastrarDieta.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
+import 'package:sugarhealth/widgets/menuRetratio.dart';
 
 import '../widgets/dietaSugestao.dart';
 
@@ -36,13 +37,14 @@ class _DietaState extends State<Dieta> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Cabecalho(),
+      drawer: MenuRetratio(),
       backgroundColor: const Color(0xff1AB0A0),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Cabecalho(),
               const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),

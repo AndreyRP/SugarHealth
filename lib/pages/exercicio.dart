@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 
+import '../widgets/menuRetratio.dart';
+
 void main() {
   runApp(const SuggarHealthApp());
 }
@@ -86,12 +88,13 @@ class TelaCategorias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Cabecalho(),
+      drawer: MenuRetratio(),
       backgroundColor: Color(0xFF14A38B),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Cabecalho(),
               SizedBox(height: 30),
               Container(
                 margin: const EdgeInsets.all(16),
@@ -205,12 +208,13 @@ class _TelaExerciciosState extends State<TelaExercicios> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Cabecalho(),
+      drawer: MenuRetratio(),
       backgroundColor: const Color(0xFF14A38B),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Cabecalho(),
               const SizedBox(height: 30),
               Container(
                 margin: const EdgeInsets.all(16),
