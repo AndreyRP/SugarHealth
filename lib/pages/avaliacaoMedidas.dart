@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:sugarhealth/classes/MedidasCorporal.dart';
+import 'package:sugarhealth/pages/editarAvaliacao.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
-import 'package:sugarhealth/widgets/campoAvalia%C3%A7ao.dart';
+import 'package:sugarhealth/widgets/campoAvaliacao.dart';
 import 'package:sugarhealth/widgets/linhaAvaliacao.dart';
 import 'package:sugarhealth/widgets/textoAvaliacao.dart';
 
 import '../widgets/menuRetratio.dart';
+
+Medidascorporal medidas = Medidascorporal(30.1, 30.1, 80.8, 40.2, 62, 62, 36, 36, 31, 31);
 
 class Avaliacao extends StatefulWidget {
   const Avaliacao({super.key});
@@ -35,9 +39,9 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CampoAvaliacao('Peso Corporal', 0xffA8D3F6),
+                        CampoAvaliacao('Peso Corporal', 0xffA8D3F6, 140),
                         Linha(),
-                        CampoAvaliacao('78.9', 0xffA8D3F6),
+                        CampoAvaliacao('78.9', 0xffA8D3F6, 140),
                       ],
                     ),
 
@@ -45,9 +49,9 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CampoAvaliacao('Altura', 0xffA8D3F6),
+                        CampoAvaliacao('Altura', 0xffA8D3F6, 140),
                         Linha(),
-                        CampoAvaliacao('1.70cm', 0xffA8D3F6),
+                        CampoAvaliacao('1.70cm', 0xffA8D3F6, 140),
                       ],
                     ),
 
@@ -55,9 +59,9 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CampoAvaliacao('Idade', 0xffA8D3F6),
+                        CampoAvaliacao('Idade', 0xffA8D3F6, 140),
                         Linha(),
-                        CampoAvaliacao('30', 0xffA8D3F6),
+                        CampoAvaliacao('30', 0xffA8D3F6, 140),
                       ],
                     ),
 
@@ -65,9 +69,9 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CampoAvaliacao('Genero', 0xffA8D3F6),
+                        CampoAvaliacao('Genero', 0xffA8D3F6, 140),
                         Linha(),
-                        CampoAvaliacao('Masculino', 0xffA8D3F6),
+                        CampoAvaliacao('Masculino', 0xffA8D3F6, 140),
                       ],
                     ),
 
@@ -75,9 +79,9 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CampoAvaliacao('TMB', 0xffA8D3F6),
+                        CampoAvaliacao('TMB', 0xffA8D3F6, 140),
                         Linha(),
-                        CampoAvaliacao('1.731,5', 0xffA8D3F6),
+                        CampoAvaliacao('1.731,5', 0xffA8D3F6, 140),
                       ],
                     ),
 
@@ -85,9 +89,9 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CampoAvaliacao('IMC', 0xffA8D3F6),
+                        CampoAvaliacao('IMC', 0xffA8D3F6, 140),
                         Linha(),
-                        CampoAvaliacao('20.7', 0xffA8D3F6),
+                        CampoAvaliacao('20.7', 0xffA8D3F6, 140),
                       ],
                     ),
 
@@ -120,7 +124,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                         ),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: TextoAvaliacao('Índice de massa corporal: adequado'),
+                      child: TextoAvaliacao('Massa corporal: adequado'),
                     ),
 
                     SizedBox(height: 8,),
@@ -135,7 +139,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Braço direito:'),
-                        CampoAvaliacao('30,1 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.bracoDireito} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -144,7 +148,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Braço esquerdo:'),
-                        CampoAvaliacao('30,1 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.bracoEsquerdo} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -153,7 +157,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Cintura:'),
-                        CampoAvaliacao('80.8 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.cintura} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -162,7 +166,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Ombro:'),
-                        CampoAvaliacao('40.2 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.ombro} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -171,7 +175,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Coxa medial Direita:'),
-                        CampoAvaliacao('62 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.coxaDireita} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -180,7 +184,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Coxa medial Esquerda:'),
-                        CampoAvaliacao('62 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.coxaEsquerda} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -189,7 +193,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Panturrilha Direita:'),
-                        CampoAvaliacao('36 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.panturrilhaDireita} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -198,7 +202,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Panturrilha Esquerda:'),
-                        CampoAvaliacao('36 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.panturrilhaEsquerda} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -207,7 +211,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Antebraço Direito:'),
-                        CampoAvaliacao('31 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.anteBracoDireito} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -216,7 +220,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextoAvaliacao('Antebraço Esquerdo:'),
-                        CampoAvaliacao('31 cm', 0xffA8D3F6),
+                        CampoAvaliacao('${medidas.anteBracoEsquerdo} cm', 0xffA8D3F6, 100),
                       ],
                     ),
 
@@ -233,7 +237,12 @@ class _AvaliacaoState extends State<Avaliacao> {
                           minimumSize: const Size(220, 42),
                         ),
                         onPressed: () {
-                          print('Botão Clicado!');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const EditarMedidas()),
+                          ).then((_) {
+                            setState(() {});
+                          });
                         },
                         child: const Text(
                           'Editar Avaliação',

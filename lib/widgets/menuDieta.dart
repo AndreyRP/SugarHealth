@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/widgets/sugestoes.dart';
+import 'package:sugarhealth/pages/sugestoes.dart';
 
 import '../classes/refeiçao.dart';
 

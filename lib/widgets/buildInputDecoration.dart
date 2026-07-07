@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class InputStylesCalculadora {
 
   static InputDecoration BuildInputDecorationCalculadora(String hint, int cor) {
+
     return InputDecoration(
       filled: true,
       fillColor: Color(cor),
@@ -10,7 +11,7 @@ class InputStylesCalculadora {
       hintStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
-        color: Colors.black
+        color: Colors.black54
       ),
 
       contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),

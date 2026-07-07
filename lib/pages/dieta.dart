@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/widgets/CadastrarDieta.dart';
+import 'package:sugarhealth/widgets/cadastrarDieta.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 import 'package:sugarhealth/widgets/menuRetratio.dart';
 
