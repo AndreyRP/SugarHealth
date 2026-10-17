@@ -86,7 +86,7 @@ class _DietaSugestaoState extends State<DietaSugestao> {
     Refeicao('Café da manhã'),
     Refeicao('Lanche da manhã'),
     Refeicao('Almoço'),
-    Refeicao('Lanche da tarde'),
+    Refeicao('Lanche da Tarde'),
     Refeicao('Jantar'),
     Refeicao('Ceia'),
   ];

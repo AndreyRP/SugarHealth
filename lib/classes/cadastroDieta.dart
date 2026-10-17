@@ -22,7 +22,7 @@ class SemanalRefeicao{
 
 class MensalRefeicao{
   final int dia;
-  final List<SuaRefeicao> listaDosRefeicoes;
+  final List<SuaRefeicao> listaDasRefeicoesMes;
 
-  MensalRefeicao(this.dia, this.listaDosRefeicoes);
+  MensalRefeicao(this.dia, this.listaDasRefeicoesMes);
 }
