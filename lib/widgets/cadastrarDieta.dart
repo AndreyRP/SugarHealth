@@ -1357,7 +1357,7 @@ Widget RefeicaoMensal(){
                       minimumSize: const Size(220, 42),
                     ),
                     onPressed: (){},
-                    child: Text('Salvar, $_diaSemanaTrocar'),
+                    child: Text('Salvar, Dia $_diaMesSelecionado'),
                   )),
 
               // --- Botões de Importação e Exportação (Estrutura UI) ---

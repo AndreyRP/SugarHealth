@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sugarhealth/pages/PG_Configuracao_Sistema.dart';
+import 'package:sugarhealth/pages/PG_Graficos.dart';
+import 'package:sugarhealth/pages/PG_Perfil_Usuario.dart';
 import 'package:sugarhealth/pages/avaliacaoMedidas.dart';
 import 'package:sugarhealth/pages/cadastro.dart';
 import 'package:sugarhealth/pages/dieta.dart';
@@ -38,6 +41,9 @@ class MyApp extends StatelessWidget {
           '/exercicios': (context) => TelaCategorias(),
           '/dieta': (context) => Dieta(),
           '/frequencia': (context) => FrequenciaScreen(),
+          '/perfil': (context) => PgPerfilUsuario(),
+          '/configuracao': (context) => PgConfiguracaoSistema(),
+          '/graficos': (context) => PgGraficos()
         }
     );
   }

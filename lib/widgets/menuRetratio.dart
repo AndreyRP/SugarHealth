@@ -50,6 +50,11 @@ class MenuRetratio extends StatelessWidget {
             onTap: () => _navegarPara(context, '/frequencia'),
           ),
           ListTile(
+            leading:  Icon(Icons.bar_chart),
+            title:  Text('Graficos'),
+            onTap: () => _navegarPara(context, '/graficos'),
+          ),
+          ListTile(
             leading:  Icon(Icons.messenger),
             title:  Text('Chat'),
             onTap: () => _navegarPara(context, '/dieta'),
@@ -57,12 +62,12 @@ class MenuRetratio extends StatelessWidget {
           ListTile(
             leading:  Icon(Icons.supervised_user_circle),
             title:  Text('Perfil'),
-            onTap: () => _navegarPara(context, '/avaliacaoMedidas'),
+            onTap: () => _navegarPara(context, '/perfil'),
           ),
           ListTile(
             leading:  Icon(Icons.engineering),
             title:  Text('Configuração'),
-            onTap: () => _navegarPara(context, '/avaliacaoMedidas'),
+            onTap: () => _navegarPara(context, '/configuracao'),
           ),
 
            Divider(),
