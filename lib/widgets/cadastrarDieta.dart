@@ -109,6 +109,7 @@ class _CadastrardietaState extends State<Cadastrardieta> {
         return const Center(child: Text('Nenhuma opção selecionada'));
     }
   }
+
   int? _cardAbertoIndex = null;
 
   // --- controle do modo mensal ---

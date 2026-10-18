@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sugarhealth/pages/PG_ChatGeral.dart';
 import 'package:sugarhealth/pages/PG_Configuracao_Sistema.dart';
 import 'package:sugarhealth/pages/PG_Graficos.dart';
 import 'package:sugarhealth/pages/PG_Perfil_Usuario.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
           '/frequencia': (context) => FrequenciaScreen(),
           '/perfil': (context) => PgPerfilUsuario(),
           '/configuracao': (context) => PgConfiguracaoSistema(),
-          '/graficos': (context) => PgGraficos()
+          '/graficos': (context) => PgGraficos(),
+          '/chat': (context) => PgChatgeral(),
         }
     );
   }

@@ -57,7 +57,7 @@ class MenuRetratio extends StatelessWidget {
           ListTile(
             leading:  Icon(Icons.messenger),
             title:  Text('Chat'),
-            onTap: () => _navegarPara(context, '/dieta'),
+            onTap: () => _navegarPara(context, '/chat'),
           ),
           ListTile(
             leading:  Icon(Icons.supervised_user_circle),
