@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/MedidasCorporal.dart';
 
 import '../widgets/buildInputDecoration.dart';
-import '../widgets/textoAvaliacao.dart';
+import '../widgets/textos.dart';
 import 'avaliacaoMedidas.dart';
 
 class EditarMedidas extends StatefulWidget {
@@ -110,7 +110,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Braço direito:'),
+                            TextoPadrao('Braço direito:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -129,7 +129,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Braço esquerdo:'),
+                            TextoPadrao('Braço esquerdo:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -148,7 +148,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Cintura:'),
+                            TextoPadrao('Cintura:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -167,7 +167,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Ombro:'),
+                            TextoPadrao('Ombro:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -186,7 +186,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Coxa medial Direita:'),
+                            TextoPadrao('Coxa medial Direita:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -205,7 +205,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Coxa medial Esquerda:'),
+                            TextoPadrao('Coxa medial Esquerda:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -224,7 +224,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Panturrilha Direita:'),
+                            TextoPadrao('Panturrilha Direita:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -244,7 +244,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Panturrilha Esquerda:'),
+                            TextoPadrao('Panturrilha Esquerda:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -264,7 +264,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Antebraço Direito:'),
+                            TextoPadrao('Antebraço Direito:'),
                             SizedBox(
                               width: 100,
                               height: 42,
@@ -283,7 +283,7 @@ class EditarMedidas extends StatefulWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            TextoAvaliacao('Antebraço Esquerdo:'),
+                            TextoPadrao('Antebraço Esquerdo:'),
                             SizedBox(
                               width: 100,
                               height: 42,

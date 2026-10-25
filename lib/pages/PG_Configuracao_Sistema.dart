@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/cabecalho.dart';
 import '../widgets/menuRetratio.dart';
-import '../widgets/textoAvaliacao.dart';
+import '../widgets/textos.dart';
 
 class PgConfiguracaoSistema extends StatefulWidget {
   const PgConfiguracaoSistema({super.key});
@@ -148,7 +148,7 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  TextoAvaliacao('Alterar Senha'),
+                                  TextoPadrao('Alterar Senha'),
                                   Icon(Icons.edit),
                                 ]
                             )
@@ -185,7 +185,7 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
                                         children: [
                                           Icon(Icons.help),
                                           SizedBox(width: 8),
-                                          TextoAvaliacao('Ajuda e Suporte'),
+                                          TextoPadrao('Ajuda e Suporte'),
                                         ],
                                       ),
                                       Icon(Icons.keyboard_arrow_up)
@@ -193,28 +193,28 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
                                   ),
                                   Row(
                                     children: [
-                                      TextoAvaliacao('Fale Conosco')
+                                      TextoPadrao('Fale Conosco')
                                     ],
                                   ),
                                   Row(
                                     children: [
-                                      TextoAvaliacao('Telefone'),
+                                      TextoPadrao('Telefone'),
                                       SizedBox(width: 12),
-                                      TextoAvaliacao('(45) 3038-4040')
+                                      TextoPadrao('(45) 3038-4040')
                                     ],
                                   ),
                                   Row(
                                     children: [
-                                      TextoAvaliacao('Celular'),
+                                      TextoPadrao('Celular'),
                                       SizedBox(width: 12),
-                                      TextoAvaliacao('(45) 99988-5454')
+                                      TextoPadrao('(45) 99988-5454')
                                     ],
                                   ),
                                   Row(
                                     children: [
-                                      TextoAvaliacao('E-mail'),
+                                      TextoPadrao('E-mail'),
                                       SizedBox(width: 12),
-                                      TextoAvaliacao('sugarhealth@gmail.com')
+                                      TextoPadrao('sugarhealth@gmail.com')
                                     ],
                                   ),
                                 ]
@@ -239,7 +239,7 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
                                   children: [
                                     Icon(Icons.help),
                                     SizedBox(width: 8),
-                                    TextoAvaliacao('Ajuda e Suporte'),
+                                    TextoPadrao('Ajuda e Suporte'),
                                   ],
                                 ),
                                 Icon(Icons.keyboard_arrow_down)
@@ -265,7 +265,7 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
                               children: [
                                 Icon(Icons.warning),
                                 SizedBox(width: 12,),
-                                TextoAvaliacao('Segurança'),
+                                TextoPadrao('Segurança'),
                               ]
                           )
                       ),
@@ -281,7 +281,7 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
                               ),
                               minimumSize: const Size(220, 42),
                             ),
-                            child: TextoAvaliacao('Voltar')),
+                            child: TextoPadrao('Voltar')),
                     ],
                 ),
             ),

@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/pages/PG_ChatComunidade.dart';
 import 'package:sugarhealth/pages/PG_ChatPrivado.dart';
-import 'package:sugarhealth/widgets/textoAvaliacao.dart';
+import 'package:sugarhealth/widgets/DecoracoesStyle.dart';
+import 'package:sugarhealth/widgets/textos.dart';
 
 import '../widgets/cabecalho.dart';
 import '../widgets/menuRetratio.dart';
@@ -42,11 +43,7 @@ class _PgChatgeralState extends State<PgChatgeral> {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 16),
             margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.black, width: 2),
-            ),
+            decoration: FundoCorBorPretas(0xffffffff, 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -186,7 +183,7 @@ class _PgChatgeralState extends State<PgChatgeral> {
                   ),
                   SizedBox(width: 14),
                   Expanded(
-                    child: TextoAvaliacao(contatos[index].nomeContato),
+                    child: TextoPadrao(contatos[index].nomeContato),
                   ),
                   Icon(
                     Icons.chevron_right,
@@ -248,7 +245,7 @@ class _PgChatgeralState extends State<PgChatgeral> {
                   ),
                   SizedBox(width: 14),
                   Expanded(
-                    child: TextoAvaliacao(contatos[index].nomeContato),
+                    child: TextoPadrao(contatos[index].nomeContato),
                   ),
                   Icon(
                     Icons.chevron_right,

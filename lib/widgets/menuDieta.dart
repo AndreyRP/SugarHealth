@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/pages/sugestoes.dart';
 
-import '../classes/refeiçao.dart';
+import '../classes/refeicao.dart';
 
 
 // --- menu para sugestao do sistema na dieta ---

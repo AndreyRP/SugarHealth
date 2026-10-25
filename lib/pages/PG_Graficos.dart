@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/widgets/textoAvaliacao.dart';
+import 'package:sugarhealth/widgets/textos.dart';
 
 import '../widgets/cabecalho.dart';
 import '../widgets/menuRetratio.dart';

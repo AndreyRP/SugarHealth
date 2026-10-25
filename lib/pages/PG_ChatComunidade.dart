@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sugarhealth/widgets/DecoracoesStyle.dart';
 
 import '../widgets/cabecalho.dart';
 import '../widgets/menuRetratio.dart';
@@ -27,11 +28,7 @@ class _PgChatcomunidadeState extends State<PgChatcomunidade> {
             margin: EdgeInsets.fromLTRB(16, 20, 16, 20),
             height: min(600, 500),
             width: min(1000, 1000),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.black, width: 2),
-            ),
+            decoration: FundoCorBorPretas(0xffffffff, 20),
             child: Column(
 
               children: [

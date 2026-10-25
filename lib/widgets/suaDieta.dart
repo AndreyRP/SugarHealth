@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
 
-Widget SuaDieta(@required SuaRefeicao refeicao) {
+Widget SuaDieta(SuaRefeicao refeicao) {
 
   // --- menu para dieta cadastrada pelo usuario ---
   return Container(

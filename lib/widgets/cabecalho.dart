@@ -55,28 +55,10 @@ class _CabecalhoState extends State<Cabecalho> {
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
-                ),
-                Text(
-                  'Treinos Físicos',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
+                )
               ],
             ),
-          ),
-          IconButton(
-            icon: const Icon(Icons.autorenew),
-            color: Colors.black,
-            iconSize: 24,
-            onPressed: () {
-              Navigator.pushNamed(context, '/avaliacaoMedidas');
-            },
-          ),
+          )
         ],
       ),
 

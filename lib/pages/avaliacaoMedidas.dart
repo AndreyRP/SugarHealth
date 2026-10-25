@@ -4,8 +4,9 @@ import 'package:sugarhealth/pages/editarAvaliacao.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 import 'package:sugarhealth/widgets/campoAvaliacao.dart';
 import 'package:sugarhealth/widgets/linhaAvaliacao.dart';
-import 'package:sugarhealth/widgets/textoAvaliacao.dart';
+import 'package:sugarhealth/widgets/textos.dart';
 
+import '../widgets/DecoracoesStyle.dart';
 import '../widgets/menuRetratio.dart';
 
 Medidascorporal medidas = Medidascorporal(30.1, 30.1, 80.8, 40.2, 62, 62, 36, 36, 31, 31);
@@ -101,36 +102,22 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Container(
                       height: 60,
                       padding: EdgeInsets.fromLTRB(14, 16, 14, 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xff97F8ED),
-                        border: Border.all(
-                          color: Colors.black,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: TextoAvaliacao('Peso Normal'),
+                      decoration: FundoCorBorPretas(0xff97F8ED, 20),
+                      child: TextoPadrao('Peso Normal'),
                     ),
 
                     // --- Indicativo de massa corporal ---
                     Container(
                       height: 60,
                       padding: EdgeInsets.fromLTRB(14, 16, 14, 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xff97F8ED),
-                        border: Border.all(
-                          color: Colors.black,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: TextoAvaliacao('Massa corporal: adequado'),
+                      decoration: FundoCorBorPretas(0xff97F8ED, 20),
+                      child: TextoPadrao('Massa corporal: adequado'),
                     ),
 
                     SizedBox(height: 8,),
 
                     // --- Titulo Avaliacao ---
-                    TextoAvaliacao('Medida Corporal'),
+                    TextoPadrao('Medida Corporal'),
 
                     SizedBox(height: 8,),
 
@@ -138,7 +125,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Braço direito:'),
+                        TextoPadrao('Braço direito:'),
                         CampoAvaliacao('${medidas.bracoDireito} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -147,7 +134,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Braço esquerdo:'),
+                        TextoPadrao('Braço esquerdo:'),
                         CampoAvaliacao('${medidas.bracoEsquerdo} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -156,7 +143,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Cintura:'),
+                        TextoPadrao('Cintura:'),
                         CampoAvaliacao('${medidas.cintura} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -165,7 +152,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Ombro:'),
+                        TextoPadrao('Ombro:'),
                         CampoAvaliacao('${medidas.ombro} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -174,7 +161,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Coxa medial Direita:'),
+                        TextoPadrao('Coxa medial Direita:'),
                         CampoAvaliacao('${medidas.coxaDireita} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -183,7 +170,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Coxa medial Esquerda:'),
+                        TextoPadrao('Coxa medial Esquerda:'),
                         CampoAvaliacao('${medidas.coxaEsquerda} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -192,7 +179,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Panturrilha Direita:'),
+                        TextoPadrao('Panturrilha Direita:'),
                         CampoAvaliacao('${medidas.panturrilhaDireita} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -201,7 +188,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Panturrilha Esquerda:'),
+                        TextoPadrao('Panturrilha Esquerda:'),
                         CampoAvaliacao('${medidas.panturrilhaEsquerda} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -210,7 +197,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Antebraço Direito:'),
+                        TextoPadrao('Antebraço Direito:'),
                         CampoAvaliacao('${medidas.anteBracoDireito} cm', 0xffA8D3F6, 100),
                       ],
                     ),
@@ -219,7 +206,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextoAvaliacao('Antebraço Esquerdo:'),
+                        TextoPadrao('Antebraço Esquerdo:'),
                         CampoAvaliacao('${medidas.anteBracoEsquerdo} cm', 0xffA8D3F6, 100),
                       ],
                     ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
+import 'package:sugarhealth/pages/PG_ConfirmacaoGravar.dart';
+import 'package:sugarhealth/widgets/DecoracoesStyle.dart';
 
-import 'createBoxInput.dart';
-import 'inputDecoration.dart';
+import '../widgets/createBoxInput.dart';
+import '../widgets/inputDecoration.dart';
 
 class Cadastrardieta extends StatefulWidget {
   const Cadastrardieta({super.key});
@@ -243,23 +245,14 @@ Widget build(BuildContext context) {
 
     return Container(
       margin: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-      ),
+      decoration: BordasTransparentes(),
 
       // --- Sub Menus ---
       child: Column(
           mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-              decoration: BoxDecoration(
-                  color: Color(0xffBCEAE5),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 2,
-                  ),
-                  borderRadius: BorderRadius.circular(20)
-              ),
+              decoration: FundoCorBorPretas(0xffBCEAE5, 20),
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child:
           Row(
@@ -790,11 +783,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
                               flex: 3,
                               child: Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(width: 2, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
+                                decoration: FundoCorBorPretas(0xFFFFFFFF, 5),
                                 child: Text(prato.nomePrato,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -810,11 +799,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
                               flex: 1,
                               child: Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Color(0xffA8D3F6),
-                                  border: Border.all(width: 2, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
                                 child: Center(
                                   child: Text('${prato.quantidade} ${prato.medida}',
                                     style: TextStyle(
@@ -925,11 +910,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
                               flex: 3,
                               child: Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(width: 2, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
+                                decoration: FundoCorBorPretas(0xffffffff, 5),
                                 child: Text(prato.nomePrato,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -945,11 +926,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
                               flex: 1,
                               child: Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Color(0xffA8D3F6),
-                                  border: Border.all(width: 2, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
                                 child: Center(
                                   child: Text('${prato.quantidade} ${prato.medida}',
                                     style: TextStyle(
@@ -1060,11 +1037,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
                               flex: 3,
                               child: Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(width: 2, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
+                                decoration: FundoCorBorPretas(0xffffffff, 5),
                                 child: Text(prato.nomePrato,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -1080,11 +1053,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
                               flex: 1,
                               child: Container(
                                 padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: Color(0xffA8D3F6),
-                                  border: Border.all(width: 2, color: Colors.black),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
                                 child: Center(
                                   child: Text('${prato.quantidade} ${prato.medida}',
                                     style: TextStyle(
@@ -1111,11 +1080,7 @@ Widget RefeicaoDiaria(){
 
     return Container(
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: Colors.black, width: 2),
-        ),
+        decoration: FundoCorBorPretas(0xffffffff, 30),
         child: Column(
             children: [
               Column(
@@ -1133,11 +1098,7 @@ Widget RefeicaoDiaria(){
                       },
                       child: Container(
                         padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: const Color(0xffBCEAE5),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.black, width: 2),
-                        ),
+                        decoration: FundoCorBorPretas(0xffBCEAE5, 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
@@ -1197,11 +1158,7 @@ Widget RefeicaoSemanal(){
 
   return Container(
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
-        border: Border.all(color: Colors.black, width: 2),
-      ),
+      decoration: FundoCorBorPretas(0xffffffff, 30),
       child: Column(
           children: [
             Column(
@@ -1219,11 +1176,7 @@ Widget RefeicaoSemanal(){
                     },
                     child: Container(
                       padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: const Color(0xffBCEAE5),
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.black, width: 2),
-                      ),
+                      decoration: FundoCorBorPretas(0xffBCEAE5, 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -1271,8 +1224,15 @@ Widget RefeicaoSemanal(){
                     ),
                     minimumSize: const Size(220, 42),
                   ),
-                  onPressed: (){},
-                  child: Text('Salvar, $_diaSemanaTrocar'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PgConfirmacaogravar(opcao: _opcaoSelecionada!, dietaSemanal: diaDaSemana)),
+                    ).then((_) {
+                      setState(() {});
+                    });
+                  },
+                  child: Text('Salvar'),
                 ))
           ]
       )
@@ -1283,11 +1243,7 @@ Widget RefeicaoMensal(){
 
     return Container(
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: Colors.black, width: 2),
-        ),
+        decoration: FundoCorBorPretas(0xffffffff, 30),
         child: Column(
             children: [
               Column(
@@ -1305,11 +1261,7 @@ Widget RefeicaoMensal(){
                       },
                       child: Container(
                         padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: const Color(0xffBCEAE5),
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: Colors.black, width: 2),
-                        ),
+                        decoration: FundoCorBorPretas(0xffBCEAE5, 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
@@ -1357,8 +1309,15 @@ Widget RefeicaoMensal(){
                       ),
                       minimumSize: const Size(220, 42),
                     ),
-                    onPressed: (){},
-                    child: Text('Salvar, Dia $_diaMesSelecionado'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PgConfirmacaogravar(opcao: _opcaoSelecionada!, dietaMensal: dietaMensal)),
+                      ).then((_) {
+                        setState(() {});
+                      });
+                    },
+                    child: Text('Salvar'),
                   )),
 
               // --- Botões de Importação e Exportação (Estrutura UI) ---

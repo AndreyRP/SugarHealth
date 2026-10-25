@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
 import 'package:sugarhealth/widgets/suaDieta.dart';
 
-import '../classes/refeiçao.dart';
+import '../classes/refeicao.dart';
 import 'menuDieta.dart';
 
 class DietaSugestao extends StatefulWidget {

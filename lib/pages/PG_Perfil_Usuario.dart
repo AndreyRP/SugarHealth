@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/cabecalho.dart';
 import '../widgets/menuRetratio.dart';
-import '../widgets/textoAvaliacao.dart';
+import '../widgets/textos.dart';
 
 class PgPerfilUsuario extends StatefulWidget {
   const PgPerfilUsuario({super.key});
@@ -68,45 +68,45 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            TextoAvaliacao('Nome: '),
+                            TextoPadrao('Nome: '),
                             SizedBox(width: 12),
-                            Expanded(child: TextoAvaliacao('Jose Manual Lopez'))
+                            Expanded(child: TextoPadrao('Jose Manual Lopez'))
                             ]
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            TextoAvaliacao('E-Mail: '),
+                            TextoPadrao('E-Mail: '),
                             SizedBox(width: 12),
-                            Expanded(child: TextoAvaliacao('JoseLopez@gmail.com'))
+                            Expanded(child: TextoPadrao('JoseLopez@gmail.com'))
                           ]
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            TextoAvaliacao('Telefone: '),
+                            TextoPadrao('Telefone: '),
                             SizedBox(width: 12),
-                            Expanded(child: TextoAvaliacao('45 9 9999-5555'))
+                            Expanded(child: TextoPadrao('45 9 9999-5555'))
                           ]
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            TextoAvaliacao('Diabetes: '),
+                            TextoPadrao('Diabetes: '),
                             SizedBox(width: 12),
-                            Expanded(child: TextoAvaliacao('Tipo 1'))
+                            Expanded(child: TextoPadrao('Tipo 1'))
                           ]
                       ),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            TextoAvaliacao('Data Nacimento: '),
+                            TextoPadrao('Data Nacimento: '),
                             SizedBox(width: 12),
-                            Expanded(child: TextoAvaliacao('20/03/2000'))
+                            Expanded(child: TextoPadrao('20/03/2000'))
                           ]
                       ),
 
@@ -124,7 +124,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                                 ),
                                 minimumSize: const Size(220, 42),
                               ),
-                              child: TextoAvaliacao('Editar')),
+                              child: TextoPadrao('Editar')),
 
                           Icon(
                             Icons.keyboard_arrow_up,
@@ -157,7 +157,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                         height: 40,
                       ),
 
-                      TextoAvaliacao('Nome do Usuario'),
+                      TextoPadrao('Nome do Usuario'),
 
                       Icon(
                         Icons.keyboard_arrow_down,
@@ -185,7 +185,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                       children: [
                         Icon(Icons.bar_chart),
                         SizedBox(width: 12,),
-                        TextoAvaliacao('Graficos'),
+                        TextoPadrao('Graficos'),
                       ]
                   )
               ),
@@ -207,7 +207,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                       children: [
                         Icon(Icons.analytics),
                         SizedBox(width: 12,),
-                        TextoAvaliacao('Avaliação Fisica'),
+                        TextoPadrao('Avaliação Fisica'),
                       ]
                   )
               ),
@@ -229,7 +229,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                       children: [
                         Icon(Icons.fitness_center),
                         SizedBox(width: 12,),
-                        TextoAvaliacao('Treinos'),
+                        TextoPadrao('Treinos'),
                       ]
                   )
               ),
@@ -251,7 +251,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                       children: [
                         Icon(Icons.calendar_month),
                         SizedBox(width: 12,),
-                        TextoAvaliacao('Minha Frequência'),
+                        TextoPadrao('Minha Frequência'),
                       ]
                   )
               ),
@@ -275,7 +275,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                       children: [
                         Icon(Icons.engineering),
                         SizedBox(width: 12,),
-                        TextoAvaliacao('Configurações'),
+                        TextoPadrao('Configurações'),
                       ]
                   )
               ),
@@ -289,7 +289,7 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                     ),
                     minimumSize: const Size(220, 42),
                   ),
-                  child: TextoAvaliacao('Sair')),
+                  child: TextoPadrao('Sair')),
             ],
         ),
     )

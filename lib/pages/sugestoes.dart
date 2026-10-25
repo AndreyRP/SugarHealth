@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../classes/refeiçao.dart';
+import '../classes/refeicao.dart';
 
 Widget Sugestoes(Refeicao refeicao, String titulo) {
   return Scaffold(
