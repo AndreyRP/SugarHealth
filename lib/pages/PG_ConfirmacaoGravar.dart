@@ -107,7 +107,10 @@ class _PgConfirmacaogravarState extends State<PgConfirmacaogravar> {
           ...List.generate(diaDaSemana.length, (indexDia){
             
             final bool isOpen = _cardAbertoIndex == indexDia;
-            
+            // Verifica se a lista está vazia OU se todos os pratos dela estão vazios
+            final bool estaVazia = diaDaSemana[indexDia].listaDasRefeicoes.isEmpty ||
+                diaDaSemana[indexDia].listaDasRefeicoes.every((refeicao) => refeicao.pratos.isEmpty);
+
             return Padding(
               padding: const EdgeInsets.only(bottom: 6.0),
               child: GestureDetector(
@@ -118,7 +121,7 @@ class _PgConfirmacaogravarState extends State<PgConfirmacaogravar> {
                 },
                 child: Container(
                   padding: const EdgeInsets.all(5),
-                  decoration: FundoCorBorPretas(0xffffffff, 5),
+                  decoration: FundoCorBorPretas(estaVazia ? 0xFFFFF9C4 : 0xffffffff, 5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -155,6 +158,9 @@ class _PgConfirmacaogravarState extends State<PgConfirmacaogravar> {
           ...List.generate(dietaMensal.length, (indexDia){
 
             final bool isOpen = _cardAbertoIndex == indexDia;
+            // Verifica se a lista está vazia OU se todos os pratos dela estão vazios
+            final bool estaVazia = dietaMensal[indexDia].listaDasRefeicoesMes.isEmpty ||
+                dietaMensal[indexDia].listaDasRefeicoesMes.every((refeicao) => refeicao.pratos.isEmpty);
 
             return Padding(
               padding: const EdgeInsets.only(bottom: 6.0),
@@ -166,7 +172,7 @@ class _PgConfirmacaogravarState extends State<PgConfirmacaogravar> {
                 },
                 child: Container(
                   padding: const EdgeInsets.all(5),
-                  decoration: FundoCorBorPretas(0xffffffff, 5),
+                  decoration: FundoCorBorPretas(estaVazia ? 0xFFFFF9C4 : 0xffffffff, 5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [

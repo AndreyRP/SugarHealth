@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
 import 'package:sugarhealth/pages/PG_ConfirmacaoGravar.dart';
+import 'package:sugarhealth/pages/PG_RepetirRefeicao.dart';
 import 'package:sugarhealth/widgets/DecoracoesStyle.dart';
+import 'package:sugarhealth/widgets/textos.dart';
 
 import '../widgets/createBoxInput.dart';
 import '../widgets/inputDecoration.dart';
@@ -222,20 +224,6 @@ class _CadastrardietaState extends State<Cadastrardieta> {
 
   late String? _diaSemanaTrocar = 'Segunda-Feira';
 
-
-  String _conferteSemanaEmNumero(String dia) {
-    switch (dia) {
-      case 'Segunda-Feira': return _semana[0];
-      case 'Terça-Feira':   return _semana[1];
-      case 'Quarta-Feira':  return _semana[2];
-      case 'Quinta-Feira':  return _semana[3];
-      case 'Sexta-Feira':   return _semana[4];
-      case 'Sábado':        return _semana[5];
-      case 'Domingo':       return _semana[6];
-      default:              return _semana[0];
-    }
-  }
-
   // --- Carrega Sub Menus ---
 
 
@@ -346,7 +334,6 @@ Widget _carregaSubMenu() {
                   if (novoValor != null) {
                     setState(() {
                       _diaSemanaTrocar = novoValor;
-                      SelecaoDiaSemana = _conferteSemanaEmNumero(novoValor);
                     });
                   }
                 },
@@ -1201,7 +1188,27 @@ Widget RefeicaoSemanal(){
                             const SizedBox(height: 16),
                             ?ConteinerAdicionarPrato(index, dia: _diaSemanaTrocar!),
                             SizedBox(height: 12),
-                            ?VisualizarAdicionados(CriarSuaRefeicaoSemanal(index, _diaSemanaTrocar!), index)
+                            ?VisualizarAdicionados(CriarSuaRefeicaoSemanal(index, _diaSemanaTrocar!), index),
+                            Center(
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: const Color(0xff97F8ED),
+                                    side: const BorderSide(color: Colors.black, width: 2.0),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    minimumSize: const Size(220, 42),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PgRepetirrefeicao(refeicao: CriarSuaRefeicaoSemanal(index, _diaSemanaTrocar!)),
+                                    )).then((_) {
+                                      setState(() {});
+                                    });
+                                  },
+                                  child: TextoPadrao('Repetir refeição'),
+                                ))
                           ],
                         ],
                       ),
