@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
-import 'package:sugarhealth/pages/PG_ConfirmacaoGravar.dart';
-import 'package:sugarhealth/pages/PG_RepetirRefeicao.dart';
+import 'package:sugarhealth/pages/PG_Confirmacao_Gravar.dart';
+import 'package:sugarhealth/pages/PG_Repetir_Refeicao.dart';
 import 'package:sugarhealth/widgets/DecoracoesStyle.dart';
 import 'package:sugarhealth/widgets/textos.dart';
 
@@ -232,7 +232,7 @@ class _CadastrardietaState extends State<Cadastrardieta> {
 Widget build(BuildContext context) {
 
     return Container(
-      margin: const EdgeInsets.all(16),
+      margin: const EdgeInsets.all(8),
       decoration: BordasTransparentes(),
 
       // --- Sub Menus ---
@@ -1066,7 +1066,7 @@ Widget? VisualizarAdicionados(SuaRefeicao refeicao, int index) {
 Widget RefeicaoDiaria(){
 
     return Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(10),
         decoration: FundoCorBorPretas(0xffffffff, 30),
         child: Column(
             children: [
@@ -1144,7 +1144,7 @@ Widget RefeicaoDiaria(){
 Widget RefeicaoSemanal(){
 
   return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(10),
       decoration: FundoCorBorPretas(0xffffffff, 30),
       child: Column(
           children: [
@@ -1189,6 +1189,7 @@ Widget RefeicaoSemanal(){
                             ?ConteinerAdicionarPrato(index, dia: _diaSemanaTrocar!),
                             SizedBox(height: 12),
                             ?VisualizarAdicionados(CriarSuaRefeicaoSemanal(index, _diaSemanaTrocar!), index),
+
                             Center(
                                 child: ElevatedButton(
                                   style: ElevatedButton.styleFrom(
@@ -1202,7 +1203,9 @@ Widget RefeicaoSemanal(){
                                   onPressed: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(builder: (context) => PgRepetirrefeicao(refeicao: CriarSuaRefeicaoSemanal(index, _diaSemanaTrocar!)),
+                                      MaterialPageRoute(builder: (context) => PgRepetirrefeicao(refeicao: CriarSuaRefeicaoSemanal(index, _diaSemanaTrocar!),
+                                          dietaSemanal: diaDaSemana,
+                                      opcao: _opcaoSelecionada),
                                     )).then((_) {
                                       setState(() {});
                                     });
@@ -1249,7 +1252,7 @@ Widget RefeicaoSemanal(){
 Widget RefeicaoMensal(){
 
     return Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(10),
         decoration: FundoCorBorPretas(0xffffffff, 30),
         child: Column(
             children: [
@@ -1293,7 +1296,30 @@ Widget RefeicaoMensal(){
                               const SizedBox(height: 16),
                               ?ConteinerAdicionarPrato(index, diaMes: _diaMesSelecionado),
                               SizedBox(height: 12),
-                              ?VisualizarAdicionados(CriarSuaRefeicaoMensal(index, _diaMesSelecionado), index)
+                              ?VisualizarAdicionados(CriarSuaRefeicaoMensal(index, _diaMesSelecionado), index),
+
+                              Center(
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff97F8ED),
+                                      side: const BorderSide(color: Colors.black, width: 2.0),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                      ),
+                                      minimumSize: const Size(220, 42),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => PgRepetirrefeicao(refeicao: CriarSuaRefeicaoMensal(index, _diaMesSelecionado),
+                                              dietaMensal: dietaMensal,
+                                              opcao: _opcaoSelecionada),
+                                          )).then((_) {
+                                        setState(() {});
+                                      });
+                                    },
+                                    child: TextoPadrao('Repetir refeição'),
+                                  ))
                             ],
                           ],
                         ),

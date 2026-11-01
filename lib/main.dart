@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/pages/PG_ChatGeral.dart';
+import 'package:sugarhealth/pages/PG_Chat_Geral.dart';
 import 'package:sugarhealth/pages/PG_Configuracao_Sistema.dart';
 import 'package:sugarhealth/pages/PG_Graficos.dart';
 import 'package:sugarhealth/pages/PG_Perfil_Usuario.dart';
-import 'package:sugarhealth/pages/avaliacaoMedidas.dart';
-import 'package:sugarhealth/pages/cadastro.dart';
-import 'package:sugarhealth/pages/dieta.dart';
-import 'package:sugarhealth/pages/exercicio.dart';
-import 'package:sugarhealth/pages/frequencia_screen.dart';
+import 'package:sugarhealth/pages/PG_Avaliacao_Fisica.dart';
+import 'package:sugarhealth/pages/PG_Cadastro_Usuario.dart';
+import 'package:sugarhealth/pages/PG_Dieta.dart';
+import 'package:sugarhealth/pages/PG_Treinos.dart';
+import 'package:sugarhealth/pages/PG_Frequencia.dart';
 import 'package:sugarhealth/pages/home.dart';
 import 'package:sugarhealth/pages/login.dart';
 

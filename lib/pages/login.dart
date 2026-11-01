@@ -3,7 +3,7 @@ import 'package:sugarhealth/widgets/buildLabel.dart';
 import 'package:sugarhealth/widgets/createBoxInput.dart';
 
 import '../widgets/inputDecoration.dart';
-import 'cadastro.dart';
+import 'PG_Cadastro_Usuario.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

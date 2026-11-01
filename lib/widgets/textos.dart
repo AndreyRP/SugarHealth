@@ -35,3 +35,15 @@ Widget TextoTitulos(String texto) {
     ),
   );
 }
+
+Widget TextoChat(String texto) {
+  return Text(
+    texto,
+    style: const TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.normal,
+      fontSize: 12,
+      decoration: TextDecoration.none, // Garante que não há sublinhado visual
+    ),
+  );
+}

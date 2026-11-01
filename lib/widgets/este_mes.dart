@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../pages/frequencia_screen.dart';
+import '../pages/PG_Frequencia.dart';
 import 'selecao_treino.dart';
 import 'registro_treino.dart';
 

@@ -69,6 +69,7 @@ class _CabecalhoState extends State<Cabecalho> {
           color: Colors.black,
           iconSize: 26,
           onPressed: () {
+            Navigator.pushNamed(context, '/chat');
           },
         ),
 
@@ -76,7 +77,7 @@ class _CabecalhoState extends State<Cabecalho> {
           padding: const EdgeInsets.only(right: 16.0, left: 8.0),
           child: InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(context, '/perfil');
             },
             child: Image.asset(
               'assets/images/logo.png',

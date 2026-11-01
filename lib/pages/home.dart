@@ -198,41 +198,6 @@ class _HomeState extends State<Home> {
                           Row(
                             children: [
                               Expanded(
-                                flex: 2,
-                                child: SizedBox(
-                                  height: 42,
-                                  child: DropdownButtonFormField<String>(
-                                    value: _tipoDiabetesSelecionado,
-                                    isExpanded: true,
-                                    hint: const Text(
-                                      'Selecione',
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora('', 0xffA8D3F6).copyWith(
-                                      contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
-                                    ),
-                                    icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
-                                    items: _tiposDiabetes.map((String tipo) {
-                                      return DropdownMenuItem<String>(
-                                        value: tipo,
-                                        child: Text(
-                                          tipo,
-                                          style: const TextStyle(color: Colors.black, fontSize: 13),
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      );
-                                    }).toList(),
-                                    onChanged: (String? novoValor) {
-                                      setState(() {
-                                        _tipoDiabetesSelecionado = novoValor;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                flex: 2,
                                 child: BuildBoxTexto('Tipo de Diabetes', alignment: Alignment.centerLeft),
                               ),
                             ],
@@ -240,19 +205,6 @@ class _HomeState extends State<Home> {
                           Row(
                             children: [
                               Expanded(
-                                flex: 1,
-                                child: SizedBox(
-                                  height: 42,
-                                  child: TextField(
-                                    controller: _idadeController,
-                                    keyboardType: TextInputType.number,
-                                    decoration: InputStylesCalculadora.BuildInputDecorationCalculadora('', 0xffA8D3F6),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                flex: 3,
                                 child: BuildBoxTexto('Idade', alignment: Alignment.centerLeft),
                               ),
                             ],

@@ -9,6 +9,7 @@ String? emailSalvo;
 String? telefoneSalvo;
 String? dataNascimentoSalva;
 String? senhaSalva;
+String? generoSalvo;
 
 class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
@@ -21,7 +22,9 @@ class _CadastroState extends State<Cadastro> {
   bool _obscureText = true;
   bool _obscureTextCon = true;
   String? _tipoDiabetesSelecionado;
+  String? _generoSelecionado;
   final List<String> _tiposDiabetes = ['Tipo 1', 'Tipo 2', 'Pré-diabetes'];
+  final List<String> _genero = ['Masculino', 'Feminino'];
 
   final TextEditingController _nomeController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -56,6 +59,7 @@ class _CadastroState extends State<Cadastro> {
   void _realizarCadastro() {
     if (_nomeController.text.isEmpty ||
         _tipoDiabetesSelecionado == null ||
+        _generoSelecionado == null ||
         _emailController.text.isEmpty ||
         _telefoneController.text.isEmpty ||
         _dataNascimentoController.text.isEmpty ||
@@ -77,6 +81,7 @@ class _CadastroState extends State<Cadastro> {
 
     nomeSalvo = _nomeController.text;
     tipoDiabetesSalvo = _tipoDiabetesSelecionado;
+    generoSalvo = _generoSelecionado;
     emailSalvo = _emailController.text;
     telefoneSalvo = _telefoneController.text;
     dataNascimentoSalva = _dataNascimentoController.text;
@@ -134,7 +139,7 @@ class _CadastroState extends State<Cadastro> {
                       child: DropdownButtonFormField<String>(
                         value: _tipoDiabetesSelecionado,
                         hint: const Text(
-                          'Digite o tipo de diabetes',
+                          'Selecione seu tipo de diabetes',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
@@ -182,6 +187,42 @@ class _CadastroState extends State<Cadastro> {
                         controller: _telefoneController,
                         keyboardType: TextInputType.phone,
                         decoration: InputStyles.BuildInputDecoration('Digite seu telefone'),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    BuildInputLabel('Selecione Seu genero'),
+                    const SizedBox(height: 6),
+                    BuildInputContainer(
+                      child: DropdownButtonFormField<String>(
+                        value: _generoSelecionado,
+                        hint: const Text(
+                          'Selecione seu genero',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            color: Color(0xffACA4A4),
+                          ),
+                        ),
+                        decoration: InputStyles.BuildInputDecoration(''),
+                        icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
+                        items: _genero.map((String tipo) {
+                          return DropdownMenuItem<String>(
+                            value: tipo,
+                            child: Text(
+                              tipo,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? novoValor) {
+                          setState(() {
+                            _generoSelecionado = novoValor;
+                          });
+                        },
                       ),
                     ),
                     const SizedBox(height: 16),

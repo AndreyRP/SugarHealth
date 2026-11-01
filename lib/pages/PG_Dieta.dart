@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/pages/cadastrarDieta.dart';
+import 'package:sugarhealth/pages/PG_Cadastro_Dieta.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 import 'package:sugarhealth/widgets/menuRetratio.dart';
 
@@ -61,7 +61,7 @@ class _DietaState extends State<Dieta> {
                         });
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -74,9 +74,9 @@ class _DietaState extends State<Dieta> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(top: 4.0),
-                              height: 2.0,
-                              width: 80.0,
+                              margin: const EdgeInsets.only(top: 4),
+                              height: 2,
+                              width: 80,
                               color: isSelected ? Colors.black : Colors.transparent,
                             ),
                           ],

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/pages/PG_ChatComunidade.dart';
-import 'package:sugarhealth/pages/PG_ChatPrivado.dart';
+import 'package:sugarhealth/pages/PG_Chat_Comunidade.dart';
+import 'package:sugarhealth/pages/PG_Chat_Privado.dart';
 import 'package:sugarhealth/widgets/DecoracoesStyle.dart';
 import 'package:sugarhealth/widgets/textos.dart';
 
 import '../widgets/cabecalho.dart';
 import '../widgets/menuRetratio.dart';
-import 'editarAvaliacao.dart';
+import 'PG_Editar_Avaliacao.dart';
 
 class PgChatgeral extends StatefulWidget {
   PgChatgeral({super.key});

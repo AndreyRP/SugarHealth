@@ -272,7 +272,9 @@ class _PgConfiguracaoSistemaState extends State<PgConfiguracaoSistema> {
 
                         SizedBox(height: 68),
 
-                        ElevatedButton(onPressed: () => (),
+                        ElevatedButton(onPressed: () => (
+                            Navigator.pop(context)
+                        ),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xff97F8ED),
                               side: const BorderSide(color: Colors.black, width: 2.0),

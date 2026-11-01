@@ -95,6 +95,15 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            TextoPadrao('Genero: '),
+                            SizedBox(width: 12),
+                            Expanded(child: TextoPadrao('Masculino'))
+                          ]
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
                             TextoPadrao('Diabetes: '),
                             SizedBox(width: 12),
                             Expanded(child: TextoPadrao('Tipo 1'))
@@ -168,116 +177,195 @@ class _PgPerfilUsuarioState extends State<PgPerfilUsuario> {
             ),
           ),
 
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                  child:
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(Icons.bar_chart),
-                        SizedBox(width: 12,),
-                        TextoPadrao('Graficos'),
-                      ]
-                  )
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/graficos')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.bar_chart),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Graficos'),
+                        ]
+                    )
+                ),
               ),
 
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                  child:
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(Icons.analytics),
-                        SizedBox(width: 12,),
-                        TextoPadrao('Avaliação Fisica'),
-                      ]
-                  )
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/avaliacaoMedidas')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.analytics),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Avaliação Fisica'),
+                        ]
+                    )
+                ),
               ),
 
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                  child:
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(Icons.fitness_center),
-                        SizedBox(width: 12,),
-                        TextoPadrao('Treinos'),
-                      ]
-                  )
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/exercicios')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.fitness_center),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Treinos'),
+                        ]
+                    )
+                ),
               ),
 
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                  child:
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(Icons.calendar_month),
-                        SizedBox(width: 12,),
-                        TextoPadrao('Minha Frequência'),
-                      ]
-                  )
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/dieta')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.restaurant),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Dieta'),
+                        ]
+                    )
+                ),
               ),
 
-              SizedBox(height: 90),
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/frequencia')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.calendar_month),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Minha Frequência'),
+                        ]
+                    )
+                ),
+              ),
 
-              Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(10)
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                  child:
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(Icons.engineering),
-                        SizedBox(width: 12,),
-                        TextoPadrao('Configurações'),
-                      ]
-                  )
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/chat')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.messenger),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Chat'),
+                        ]
+                    )
+                ),
+              ),
+
+              SizedBox(height: 60),
+
+              GestureDetector(
+                onTap: ()=>{
+                  Navigator.pushNamed(context, '/configuracao')
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    child:
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.engineering),
+                          SizedBox(width: 12,),
+                          TextoPadrao('Configurações'),
+                        ]
+                    )
+                ),
               ),
 
               ElevatedButton(onPressed: () => (),

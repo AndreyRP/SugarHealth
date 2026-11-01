@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sugarhealth/classes/MedidasCorporal.dart';
-import 'package:sugarhealth/pages/editarAvaliacao.dart';
+import 'package:sugarhealth/pages/PG_Editar_Avaliacao.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 import 'package:sugarhealth/widgets/campoAvaliacao.dart';
 import 'package:sugarhealth/widgets/linhaAvaliacao.dart';
@@ -36,6 +36,12 @@ class _AvaliacaoState extends State<Avaliacao> {
                 child: Column(
                   spacing: 22,
                   children: [
+                    Center(
+                      child: TextoTitulos('Avaliaçao Fisica'),
+                    ),
+
+                    SizedBox(height: 12),
+                    
                     // --- peso ---
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

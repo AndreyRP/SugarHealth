@@ -15,13 +15,13 @@ Widget SuaDieta(SuaRefeicao refeicao) {
             final prato = refeicao.pratos[index];
 
             return Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
+              padding: const EdgeInsets.only(bottom: 10),
               child: Row(
                 crossAxisAlignment: .start,
                 children: [
 
                   Expanded(
-                    flex: 3,
+                    flex: 4,
                     child: Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
@@ -38,10 +38,10 @@ Widget SuaDieta(SuaRefeicao refeicao) {
                     ),
                   ),
 
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 6),
 
                   Expanded(
-                    flex: 1,
+                    flex: 2,
                     child: Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(

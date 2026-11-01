@@ -3,7 +3,7 @@ import 'package:sugarhealth/classes/MedidasCorporal.dart';
 
 import '../widgets/buildInputDecoration.dart';
 import '../widgets/textos.dart';
-import 'avaliacaoMedidas.dart';
+import 'PG_Avaliacao_Fisica.dart';
 
 class EditarMedidas extends StatefulWidget {
   const EditarMedidas({Key? key}) : super(key: key);
@@ -90,11 +90,7 @@ class EditarMedidas extends StatefulWidget {
     Widget build(BuildContext context) {
       return Scaffold(
           appBar: AppBar(
-            title: Text('Editar Suas Medidas Corporais',
-              style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold
-              ),),
+            title: TextoTitulos('Editar Suas Medidas'),
             backgroundColor: Colors.transparent,
             elevation: 0,
             iconTheme: const IconThemeData(color: Colors.black),
@@ -106,6 +102,7 @@ class EditarMedidas extends StatefulWidget {
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                     child: Column(
+                      spacing: 12,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,7 +110,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Braço direito:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _bracoDireito,
                                 textAlign: .center,
@@ -132,7 +129,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Braço esquerdo:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _bracoEsquerdo,
                                 textAlign: .center,
@@ -151,7 +148,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Cintura:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _cintura,
                                 textAlign: .center,
@@ -170,7 +167,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Ombro:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _ombro,
                                 textAlign: .center,
@@ -189,7 +186,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Coxa medial Direita:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _coxaDireita,
                                 textAlign: .center,
@@ -208,7 +205,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Coxa medial Esquerda:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _coxaEsquerda,
                                 textAlign: .center,
@@ -227,7 +224,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Panturrilha Direita:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _panturrilhaDireita,
                                 textAlign: .center,
@@ -247,7 +244,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Panturrilha Esquerda:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _panturrilhaEsquerda,
                                 textAlign: .center,
@@ -267,7 +264,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Antebraço Direito:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _anteBracoDireito,
                                 textAlign: .center,
@@ -286,7 +283,7 @@ class EditarMedidas extends StatefulWidget {
                             TextoPadrao('Antebraço Esquerdo:'),
                             SizedBox(
                               width: 100,
-                              height: 42,
+                              height: 36,
                               child: TextField(
                                 controller: _anteBracoEsquerdo,
                                 textAlign: .center,
@@ -298,6 +295,8 @@ class EditarMedidas extends StatefulWidget {
                           ],
                         ),
 
+                        SizedBox(height: 24),
+
                         // --- Salvar ---
                         Center(
                           child: ElevatedButton(
@@ -308,16 +307,10 @@ class EditarMedidas extends StatefulWidget {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
-                              minimumSize: const Size(220, 42),
+                              minimumSize: const Size(220, 36),
                             ),
                             onPressed: () => Salvar(context),
-                            child: const Text(
-                              'Salvar',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black
-                              ),
-                            ),
+                            child: TextoPadraoBold('Salvar')
                           ),
                         ),
                       ],
