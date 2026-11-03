@@ -27,4 +27,27 @@ class InputStyles {
       ),
     );
   }
+
+  static InputDecoration BuildInputDecorationTreino(String hintText) {
+    return InputDecoration(
+      filled: true,
+      fillColor: Colors.white,
+      hintText: hintText,
+      hintStyle: const TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: 12,
+        color: Color(0xffACA4A4),
+      ),
+      contentPadding: EdgeInsets.symmetric(horizontal: 6, vertical: 0),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+    );
+  }
 }

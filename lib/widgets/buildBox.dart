@@ -27,3 +27,22 @@ Widget BuildBoxTexto(String text, {Alignment alignment = Alignment.centerLeft}) 
     ),
   );
 }
+
+Widget buildInfoCapsule(String texto) {
+  return Container(
+    padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+    ),
+    child: Text(
+      texto,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontSize: 12,
+          color: Colors.black,
+          fontWeight: FontWeight.w500
+      ),
+    ),
+  );
+}

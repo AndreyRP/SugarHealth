@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           '/cadastro': (context) => Cadastro(),
           '/home': (context) => Home(),
           '/avaliacaoMedidas': (context) => Avaliacao(),
-          '/exercicios': (context) => TelaCategorias(),
+          '/exercicios': (context) => PgTreinos(),
           '/dieta': (context) => Dieta(),
           '/frequencia': (context) => FrequenciaScreen(),
           '/perfil': (context) => PgPerfilUsuario(),

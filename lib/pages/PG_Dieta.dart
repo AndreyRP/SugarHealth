@@ -39,15 +39,15 @@ class _DietaState extends State<Dieta> {
     return Scaffold(
       appBar: Cabecalho(),
       drawer: MenuRetratio(),
-      backgroundColor: const Color(0xff1AB0A0),
+      backgroundColor: Color(0xff1AB0A0),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding: EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +61,7 @@ class _DietaState extends State<Dieta> {
                         });
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                        padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -74,7 +74,7 @@ class _DietaState extends State<Dieta> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.only(top: 4),
+                              margin: EdgeInsets.only(top: 4),
                               height: 2,
                               width: 80,
                               color: isSelected ? Colors.black : Colors.transparent,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sugarhealth/widgets/buildBoxTexto.dart';
+import 'package:sugarhealth/widgets/buildBox.dart';
 import 'package:sugarhealth/widgets/cabecalho.dart';
 
 import '../widgets/buildInputDecoration.dart';

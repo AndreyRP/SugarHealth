@@ -123,7 +123,7 @@ class _AvaliacaoState extends State<Avaliacao> {
                     SizedBox(height: 8,),
 
                     // --- Titulo Avaliacao ---
-                    TextoPadrao('Medida Corporal'),
+                    TextoTitulos('Medida Corporal'),
 
                     SizedBox(height: 8,),
 

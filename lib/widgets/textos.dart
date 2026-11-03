@@ -47,3 +47,15 @@ Widget TextoChat(String texto) {
     ),
   );
 }
+
+Widget TextoTituloTreino(String texto) {
+  return Text(
+    texto,
+    style: const TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+      fontSize: 18,
+      decoration: TextDecoration.none, // Garante que não há sublinhado visual
+    ),
+  );
+}
