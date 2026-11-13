@@ -40,9 +40,10 @@ class _EsteMesState extends State<EsteMes> {
 
     return Container(
       padding: const EdgeInsets.all(16),
+      margin: .only(bottom: 16),
       decoration: const BoxDecoration(
         color: Color(0xFFD4F4F0),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: BorderRadius.all(Radius.circular(24)),
       ),
       child: Stack(
         children: [

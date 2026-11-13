@@ -200,6 +200,10 @@ class _PgCadastroTreinoState extends State<PgCadastroTreino> {
                                     onPressed: (){_adicionar(index);},
                                     child: Text('Adicionar'),
                                   )),
+
+                              SizedBox(height: 12),
+
+                              ?VisualizarAdicionados(index)
                             ],
                           ) : SizedBox.shrink()
                         ]
@@ -294,6 +298,10 @@ class _PgCadastroTreinoState extends State<PgCadastroTreino> {
                                       onPressed: (){_adicionar(index);},
                                       child: Text('Adicionar'),
                                     )),
+
+                                SizedBox(height: 12),
+
+                                ?VisualizarAdicionados(index)
                               ],
                             ) : SizedBox.shrink()
                           ]
@@ -308,5 +316,335 @@ class _PgCadastroTreinoState extends State<PgCadastroTreino> {
     );
   }
 
-  void _adicionar(int index) {}
+  Widget? VisualizarAdicionados(int index) {
+
+    // da para fazer o Switch apenas no setStatus de remover? para remover 2 retornos
+    switch(_opcaoSelecionada){
+      case 0:
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: List<Widget>.generate(treinos[index].exercicios.length, (treinoIndex) {
+                  final exercicio = treinos[index].exercicios[treinoIndex];
+
+                  return Dismissible(
+                      key: Key('${exercicio.nome}_${treinoIndex}_$index'),
+                      direction: DismissDirection.endToStart,
+                      background: Container(
+                        margin: const EdgeInsets.only(bottom: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.only(right: 20),
+                        child: const Icon(Icons.delete, color: Colors.white),
+                      ),
+                      onDismissed: (direction) {
+                        setState(() {
+                          treinos[index].exercicios.removeAt(treinoIndex);
+                        });
+
+                        late OverlayEntry overlayEntry;
+
+                        overlayEntry = OverlayEntry(
+                          builder: (context) => Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Container (
+                                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                                decoration: BoxDecoration(
+                                  color: Colors.black87,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 10,
+                                      offset: Offset(0, 5),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    const Icon(Icons.delete_outline, color: Colors.white, size: 20),
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      child: Text(
+                                        '${exercicio.nome} removido.',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+
+                        // Insere a mensagem na camada absoluta superior do Flutter
+                        Overlay.of(context).insert(overlayEntry);
+
+                        // Remove o aviso da tela automaticamente após 2 segundos
+                        Future.delayed(const Duration(seconds: 2), () {
+                          overlayEntry.remove();
+                        });
+                      },
+
+
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 10.0),
+                        child: Row(
+                          crossAxisAlignment: .start,
+                          children: [
+
+                            Expanded(
+                              flex: 3,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: FundoCorBorPretas(0xFFFFFFFF, 5),
+                                child: Text(exercicio.nome,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(width: 10),
+
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
+                                child: Center(
+                                  child: Text('${exercicio.series}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(width: 10),
+
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
+                                child: Center(
+                                  child: Text('${exercicio.repeticoes}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                  );
+                }),
+              ),
+            ],
+          ),
+        );
+      case 1:
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                children: List<Widget>.generate(treinosSemana[index].exercicios.length, (treinoIndex) {
+                  final exercicio = treinosSemana[index].exercicios[treinoIndex];
+
+                  return Dismissible(
+                      key: Key('${exercicio.nome}_${treinoIndex}_$index'),
+                      direction: DismissDirection.endToStart,
+                      background: Container(
+                        margin: const EdgeInsets.only(bottom: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.only(right: 20),
+                        child: const Icon(Icons.delete, color: Colors.white),
+                      ),
+                      onDismissed: (direction) {
+                        setState(() {
+                          treinosSemana[index].exercicios.removeAt(treinoIndex);
+                        });
+
+                        late OverlayEntry overlayEntry;
+
+                        overlayEntry = OverlayEntry(
+                          builder: (context) => Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Material(
+                              color: Colors.transparent,
+                              child: Container (
+                                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                                decoration: BoxDecoration(
+                                  color: Colors.black87,
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 10,
+                                      offset: Offset(0, 5),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    const Icon(Icons.delete_outline, color: Colors.white, size: 20),
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      child: Text(
+                                        '${exercicio.nome} removido.',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+
+                        // Insere a mensagem na camada absoluta superior do Flutter
+                        Overlay.of(context).insert(overlayEntry);
+
+                        // Remove o aviso da tela automaticamente após 2 segundos
+                        Future.delayed(const Duration(seconds: 2), () {
+                          overlayEntry.remove();
+                        });
+                      },
+
+
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 10.0),
+                        child: Row(
+                          crossAxisAlignment: .start,
+                          children: [
+
+                            Expanded(
+                              flex: 3,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: FundoCorBorPretas(0xFFFFFFFF, 5),
+                                child: Text(exercicio.nome,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(width: 10),
+
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
+                                child: Center(
+                                  child: Text('${exercicio.seriesCadastradas}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            const SizedBox(width: 10),
+
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: FundoCorBorPretas(0xffA8D3F6, 5),
+                                child: Center(
+                                  child: Text('${exercicio.repeticoesCadastradas}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                  );
+                }),
+              ),
+            ],
+          ),
+        );
+    }
+  }
+
+  void _adicionar(int index) {
+    if (_serie.text.isEmpty ||
+        _repeticao.text.isEmpty ||
+        _exercicio.text.isEmpty) {
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Por favor, preencha todos os campos!')),
+      );
+      return;
+    }
+
+    final int? serie = int.parse(_serie.text);
+    final int? rep = int.parse(_repeticao.text);
+
+
+    switch(_opcaoSelecionada){
+      case 0: SalvarTreino(index, serie!, rep!, _exercicio.text);
+      case 1: SalvarTreinoSemana(index, serie!, rep!, _exercicio.text);
+    }
+
+    setState(() {
+      _repeticao.clear();
+      _serie.clear();
+      _exercicio.clear();
+    });
+  }
+
+  SalvarTreino(int index, int serie, int rep, String exercicio){
+      treinos[index].exercicios.add(Exercicio(nome: exercicio, series: serie, repeticoes: rep));
+  }
+
+  SalvarTreinoSemana(int index, int serie, int rep, String exercicio){
+    treinosSemana[index].exercicios.add(ExercicioDetalhados(nome: exercicio, seriesCadastradas: serie, repeticoesCadastradas: rep));
+  }
 }

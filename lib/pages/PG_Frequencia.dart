@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sugarhealth/widgets/textos.dart';
 import '../widgets/cabecalho.dart';
 import '../widgets/este_mes.dart';
 import '../widgets/este_ano.dart';
@@ -32,15 +33,13 @@ class _FrequenciaScreenState extends State<FrequenciaScreen> {
       drawer: MenuRetratio(),
       backgroundColor: Color(0xff1AB0A0),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
-            const SizedBox(height: 10),
-            const Text(
-              'Minha Frequência',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87),
-            ),
-            const SizedBox(height: 12),
+             SizedBox(height: 10),
+             TextoTitulos('Minha Frequência'),
+
+             SizedBox(height: 12),
 
             // Botão Seletor de Abas
             Container(
@@ -49,7 +48,7 @@ class _FrequenciaScreenState extends State<FrequenciaScreen> {
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.grey.shade400),
               ),
-              padding: const EdgeInsets.all(4),
+              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
               child: Row(
                 children: [
                   _buildTabButton('Este Mês'),
@@ -74,27 +73,27 @@ class _FrequenciaScreenState extends State<FrequenciaScreen> {
     return Expanded(
       child: GestureDetector(
         onTap: () => setState(() => abaSelecionada = titulo),
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 4),
-          decoration: BoxDecoration(
-            color: isSelected ? Colors.transparent : Colors.white,
-            border: isSelected
-                ? Border(bottom: BorderSide(color: Colors.black, width: 1.5))
-                : null,
-            boxShadow: null,
-
-          ),
-
-          child: Text(
-            titulo,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-              color: Colors.black,
+        child: Column(
+          children: [
+            Container(
+              child: Text(
+                titulo,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                  color: Colors.black,
+                ),
+              ),
             ),
-          ),
-        ),
+            Container(
+              margin: EdgeInsets.only(top: 4),
+              height: 2,
+              width: 80,
+              color: isSelected ? Colors.black : Colors.transparent,
+            ),
+          ],
+        )
       ),
     );
   }

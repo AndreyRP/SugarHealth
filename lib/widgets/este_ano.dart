@@ -14,17 +14,18 @@ class EsteAno extends StatelessWidget {
     ];
 
     return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.all(16),
+      margin: .only(bottom: 16),
+      decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: BorderRadius.all(Radius.circular(24)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text('Sua frequência anual:', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
               Text('Selecione um mês', style: TextStyle(fontSize: 10, color: Colors.grey)),
             ],

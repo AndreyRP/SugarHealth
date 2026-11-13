@@ -18,9 +18,10 @@ class _OutrosAnosState extends State<OutrosAnos> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
+      margin: .only(bottom: 16),
       decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: BorderRadius.all(Radius.circular(24)),
       ),
       child: _mostrandoDetalhesAno ? _buildTelaVerificacaoAno() : _buildListaAnos(),
     );
