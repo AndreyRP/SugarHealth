@@ -1,4 +1,12 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:sugarhealth/classes/LeitorCSV.dart';
 import 'package:sugarhealth/classes/cadastroDieta.dart';
 import 'package:sugarhealth/pages/PG_Confirmacao_Gravar.dart';
 import 'package:sugarhealth/pages/PG_Repetir_Refeicao.dart';
@@ -118,7 +126,7 @@ class _CadastrardietaState extends State<Cadastrardieta> {
 
   // --- controle do modo mensal ---
 
-  final List<String> _diasDoMes = List.generate(
+  List<String> _diasDoMes = List.generate(
     31,
         (index) => 'Dia ${(index + 1).toString().padLeft(2, '0')}',
   );
@@ -207,7 +215,7 @@ class _CadastrardietaState extends State<Cadastrardieta> {
     SuaRefeicao('Ceia', []),
   ];
 
-  final List<MensalRefeicao> dietaMensal = List.generate(
+  List<MensalRefeicao> dietaMensal = List.generate(
     31,
         (index) => MensalRefeicao(
        index + 1,
@@ -1372,8 +1380,8 @@ Widget RefeicaoMensal(){
                                   ),
                                   padding: const EdgeInsets.symmetric(vertical: 12),
                                 ),
-                                onPressed: () {
-                                  // Futura implementação: Download/Exportação do modelo CSV/XML
+                                onPressed: () async {
+                                  await exportarModeloPlanilha();
                                 },
                                 icon: const Icon(Icons.file_download_outlined, color: Colors.black, size: 20),
                                 label: const Text(
@@ -1407,8 +1415,8 @@ Widget RefeicaoMensal(){
                               padding: const EdgeInsets.symmetric(vertical: 12),
                               elevation: 0,
                             ),
-                            onPressed: () {
-                              // Futura implementação: Leitura do arquivo CSV/XML
+                            onPressed: () async {
+                              await importarDietaDoArquivo();
                             },
                             icon: const Icon(Icons.file_upload_outlined, color: Colors.black, size: 20),
                             label: const Text(
@@ -1431,4 +1439,59 @@ Widget RefeicaoMensal(){
     );
   }
 
+  Future<void> importarDietaDoArquivo() async {
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['xlsx'],
+        withData: true,
+      );
+
+      if (result != null && result.files.single.bytes != null) {
+        List<int> bytesFicheiro = result.files.single.bytes!;
+
+        LeitorDietaMensal leitor = LeitorDietaMensal();
+
+        setState(() {
+          // A tua variável final recebe a lista de 31 dias devidamente preenchida!
+          dietaMensal = leitor.importarExcelDieta(bytesFicheiro);
+        });
+
+        // Feedback visual simples ou log
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Dieta mensal importada com sucesso!')),
+        );
+      }
+    } catch (e) {
+      print("Erro ao importar: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Erro ao importar o ficheiro: $e')),
+      );
+    }
+  }
+
+  Future<void> exportarModeloPlanilha() async {
+    try {
+      // 1. Lê os bytes do ficheiro Excel diretamente dos assets
+      ByteData data = await rootBundle.load('assets/modelos/PadraoDieta.xlsx');
+      Uint8List bytes = data.buffer.asUint8List();
+
+      // 2. Partilha diretamente da memória (sem usar path_provider nem gravar no disco)
+      await Share.shareXFiles(
+        [
+          XFile.fromData(
+            bytes,
+            name: 'Padrao_de_Dieta.xlsx',
+            mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          ),
+        ],
+        text: 'Modelo de Dieta Mensal - Sugar Health',
+      );
+    } catch (e) {
+      print('Erro ao exportar modelo: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Erro ao exportar modelo: $e')),
+      );
+    }
+  }
 }

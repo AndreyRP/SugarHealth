@@ -30,7 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  share_plus: ^10.1.2
+  path_provider: ^2.1.4
   fl_chart: ^0.68.0
+  file_picker: ^8.1.4
+  excel: ^4.0.6
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -61,6 +67,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.png
+    - assets/modelos/PadraoDieta.xlsx
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
